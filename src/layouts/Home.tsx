@@ -5,11 +5,6 @@ import swipper1 from "../../src/assets/images/swipper1.jpg";
 import swipper2 from "../../src/assets/images/swipper2.jpg";
 import swipper3 from "../../src/assets/images/swipper3.jpg";
 
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import "swiper/css/effect-fade";
-
 export default function SimpleSwiper() {
   return (
     <Swiper
