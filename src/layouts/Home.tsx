@@ -5,7 +5,7 @@ import swipper1 from "../../src/assets/images/swipper1.jpg";
 import swipper2 from "../../src/assets/images/swipper2.jpg";
 import swipper3 from "../../src/assets/images/swipper3.jpg";
 
-const CarouselComponent = (Carousel as any).default || Carousel;
+// const CarouselComponent = (Carousel as any).default || Carousel;
 
 export default function Home() {
   const responsive = {
@@ -18,7 +18,7 @@ export default function Home() {
 
   return (
     <div className="w-full min-h-full px-6 py-10 bg-gray-600">
-      <CarouselComponent
+      {/* <CarouselComponent
         responsive={responsive}
         infinite
         autoPlay
@@ -41,7 +41,8 @@ export default function Home() {
 </div>
 
         ))}
-      </CarouselComponent>
+      </CarouselComponent> */}
+      Hello
     </div>
   );
 }
