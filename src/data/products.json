@@ -1,37 +1,482 @@
 [
-    {
-      "id": 1,
-      "name": "Designer Handbag",
-      "price": 180,
-      "image":
-        "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?q=80&w=800"
-    },
-    {
-      "id": 2,
-      "name": "Premium Sneakers",
-      "price": 159,
-      "image":
-        "https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?q=80&w=800"
-    },
-    {
-      "id": 3,
-      "name": "Luxury Coat",
-      "price": 299,
-      "image":
-        "https://images.unsplash.com/photo-1512436991641-6745cdb1723f?q=80&w=800"
-    },
-    {
-      "id": 4,
-      "name": "Classic Watch",
-      "price": 199,
-      "image":
-        "https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=800"
-    },
-    {
-      "id": 5,
-      "name": "Fashion Sunglasses",
-      "price": 99,
-      "image":
-        "https://images.unsplash.com/photo-1511499767150-a48a237f0083?q=80&w=800"
-    }
-  ]
+  {
+    "id": 1,
+    "name": "Designer Handbag",
+    "price": 180,
+    "image": "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?q=80&w=800",
+    "isFeature": true,
+    "gender": "women",
+    "ageGroup": "adults"
+  },
+  {
+    "id": 2,
+    "name": "Premium Sneakers",
+    "price": 159,
+    "image": "https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?q=80&w=800",
+    "isFeature": false,
+    "gender": "unisex",
+    "ageGroup": "teens"
+  },
+  {
+    "id": 3,
+    "name": "Luxury Coat",
+    "price": 299,
+    "image": "https://images.unsplash.com/photo-1512436991641-6745cdb1723f?q=80&w=800",
+    "isFeature": true,
+    "gender": "men",
+    "ageGroup": "adults"
+  },
+  {
+    "id": 4,
+    "name": "Classic Watch",
+    "price": 199,
+    "image": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=800",
+    "isFeature": false,
+    "gender": "men",
+    "ageGroup": "adults"
+  },
+  {
+    "id": 5,
+    "name": "Fashion Sunglasses",
+    "price": 99,
+    "image": "https://images.unsplash.com/photo-1511499767150-a48a237f0083?q=80&w=800",
+    "isFeature": true,
+    "gender": "unisex",
+    "ageGroup": "adults"
+  },
+  {
+    "id": 6,
+    "name": "Casual T-Shirt",
+    "price": 39,
+    "image": "https://images.unsplash.com/photo-1520974735194-6c4cfd8d1c3c?q=80&w=800",
+    "isFeature": false,
+    "gender": "men",
+    "ageGroup": "teens"
+  },
+  {
+    "id": 7,
+    "name": "Elegant Dress",
+    "price": 220,
+    "image": "https://images.unsplash.com/photo-1520975916090-3105956dac38?q=80&w=800",
+    "isFeature": true,
+    "gender": "women",
+    "ageGroup": "adults"
+  },
+  {
+    "id": 8,
+    "name": "Kids Hoodie",
+    "price": 49,
+    "image": "https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?q=80&w=800",
+    "isFeature": false,
+    "gender": "unisex",
+    "ageGroup": "kids"
+  },
+  {
+    "id": 9,
+    "name": "Running Shoes",
+    "price": 120,
+    "image": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=800",
+    "isFeature": true,
+    "gender": "unisex",
+    "ageGroup": "adults"
+  },
+  {
+    "id": 10,
+    "name": "Leather Belt",
+    "price": 45,
+    "image": "https://images.unsplash.com/photo-1585386959984-a41552231693?q=80&w=800",
+    "isFeature": false,
+    "gender": "men",
+    "ageGroup": "adults"
+  },
+
+  {
+    "id": 11,
+    "name": "Denim Jacket",
+    "price": 140,
+    "image": "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?q=80&w=800",
+    "isFeature": true,
+    "gender": "unisex",
+    "ageGroup": "teens"
+  },
+  {
+    "id": 12,
+    "name": "High Heels",
+    "price": 130,
+    "image": "https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=800",
+    "isFeature": false,
+    "gender": "women",
+    "ageGroup": "adults"
+  },
+  {
+    "id": 13,
+    "name": "Formal Shirt",
+    "price": 75,
+    "image": "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?q=80&w=800",
+    "isFeature": true,
+    "gender": "men",
+    "ageGroup": "adults"
+  },
+  {
+    "id": 14,
+    "name": "Summer Shorts",
+    "price": 42,
+    "image": "https://images.unsplash.com/photo-1593032465171-8b98d84f6fa1?q=80&w=800",
+    "isFeature": false,
+    "gender": "unisex",
+    "ageGroup": "teens"
+  },
+  {
+    "id": 15,
+    "name": "Kids Sneakers",
+    "price": 55,
+    "image": "https://images.unsplash.com/photo-1519744792095-2f2205e87b6f?q=80&w=800",
+    "isFeature": true,
+    "gender": "unisex",
+    "ageGroup": "kids"
+  },
+
+  {
+    "id": 16,
+    "name": "Wool Scarf",
+    "price": 35,
+    "image": "https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?q=80&w=800",
+    "isFeature": false,
+    "gender": "women",
+    "ageGroup": "adults"
+  },
+  {
+    "id": 17,
+    "name": "Sports Jacket",
+    "price": 180,
+    "image": "https://images.unsplash.com/photo-1551028719-00167b16eac5?q=80&w=800",
+    "isFeature": true,
+    "gender": "men",
+    "ageGroup": "adults"
+  },
+  {
+    "id": 18,
+    "name": "Casual Cap",
+    "price": 25,
+    "image": "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?q=80&w=800",
+    "isFeature": false,
+    "gender": "unisex",
+    "ageGroup": "teens"
+  },
+  {
+    "id": 19,
+    "name": "Evening Gown",
+    "price": 350,
+    "image": "https://images.unsplash.com/photo-1503341455253-b2e723bb3dbb?q=80&w=800",
+    "isFeature": true,
+    "gender": "women",
+    "ageGroup": "adults"
+  },
+  {
+    "id": 20,
+    "name": "Leather Wallet",
+    "price": 60,
+    "image": "https://images.unsplash.com/photo-1585386959984-a41552231693?q=80&w=800",
+    "isFeature": false,
+    "gender": "men",
+    "ageGroup": "adults"
+  },
+
+  {
+    "id": 21,
+    "name": "Fashion Item 21",
+    "price": 110,
+    "image": "https://images.unsplash.com/photo-1520974735194-6c4cfd8d1c3c?q=80&w=800",
+    "isFeature": true,
+    "gender": "unisex",
+    "ageGroup": "adults"
+  },
+  {
+    "id": 22,
+    "name": "Fashion Item 22",
+    "price": 85,
+    "image": "https://images.unsplash.com/photo-1520974735194-6c4cfd8d1c3c?q=80&w=800",
+    "isFeature": false,
+    "gender": "men",
+    "ageGroup": "teens"
+  },
+  {
+    "id": 23,
+    "name": "Fashion Item 23",
+    "price": 145,
+    "image": "https://images.unsplash.com/photo-1520974735194-6c4cfd8d1c3c?q=80&w=800",
+    "isFeature": true,
+    "gender": "women",
+    "ageGroup": "adults"
+  },
+
+  {
+    "id": 24,
+    "name": "Fashion Item 24",
+    "price": 70,
+    "image": "https://images.unsplash.com/photo-1520974735194-6c4cfd8d1c3c?q=80&w=800",
+    "isFeature": false,
+    "gender": "unisex",
+    "ageGroup": "kids"
+  },
+
+  {
+    "id": 25,
+    "name": "Fashion Item 25",
+    "price": 190,
+    "image": "https://images.unsplash.com/photo-1520974735194-6c4cfd8d1c3c?q=80&w=800",
+    "isFeature": true,
+    "gender": "men",
+    "ageGroup": "adults"
+  },
+
+  {
+    "id": 26,
+    "name": "Fashion Item 26",
+    "price": 55,
+    "image": "https://images.unsplash.com/photo-1520974735194-6c4cfd8d1c3c?q=80&w=800",
+    "isFeature": false,
+    "gender": "women",
+    "ageGroup": "teens"
+  },
+
+  {
+    "id": 27,
+    "name": "Fashion Item 27",
+    "price": 260,
+    "image": "https://images.unsplash.com/photo-1520974735194-6c4cfd8d1c3c?q=80&w=800",
+    "isFeature": true,
+    "gender": "unisex",
+    "ageGroup": "adults"
+  },
+
+  {
+    "id": 28,
+    "name": "Fashion Item 28",
+    "price": 95,
+    "image": "https://images.unsplash.com/photo-1520974735194-6c4cfd8d1c3c?q=80&w=800",
+    "isFeature": false,
+    "gender": "men",
+    "ageGroup": "teens"
+  },
+
+  {
+    "id": 29,
+    "name": "Fashion Item 29",
+    "price": 135,
+    "image": "https://images.unsplash.com/photo-1520974735194-6c4cfd8d1c3c?q=80&w=800",
+    "isFeature": true,
+    "gender": "women",
+    "ageGroup": "adults"
+  },
+
+  {
+    "id": 30,
+    "name": "Fashion Item 30",
+    "price": 60,
+    "image": "https://images.unsplash.com/photo-1520974735194-6c4cfd8d1c3c?q=80&w=800",
+    "isFeature": false,
+    "gender": "unisex",
+    "ageGroup": "kids"
+  },
+
+  {
+    "id": 31,
+    "name": "Fashion Item 31",
+    "price": 210,
+    "image": "https://images.unsplash.com/photo-1520974735194-6c4cfd8d1c3c?q=80&w=800",
+    "isFeature": true,
+    "gender": "men",
+    "ageGroup": "adults"
+  },
+
+  {
+    "id": 32,
+    "name": "Fashion Item 32",
+    "price": 90,
+    "image": "https://images.unsplash.com/photo-1520974735194-6c4cfd8d1c3c?q=80&w=800",
+    "isFeature": false,
+    "gender": "women",
+    "ageGroup": "teens"
+  },
+
+  {
+    "id": 33,
+    "name": "Fashion Item 33",
+    "price": 170,
+    "image": "https://images.unsplash.com/photo-1520974735194-6c4cfd8d1c3c?q=80&w=800",
+    "isFeature": true,
+    "gender": "unisex",
+    "ageGroup": "adults"
+  },
+
+  {
+    "id": 34,
+    "name": "Fashion Item 34",
+    "price": 65,
+    "image": "https://images.unsplash.com/photo-1520974735194-6c4cfd8d1c3c?q=80&w=800",
+    "isFeature": false,
+    "gender": "men",
+    "ageGroup": "kids"
+  },
+
+  {
+    "id": 35,
+    "name": "Fashion Item 35",
+    "price": 240,
+    "image": "https://images.unsplash.com/photo-1520974735194-6c4cfd8d1c3c?q=80&w=800",
+    "isFeature": true,
+    "gender": "women",
+    "ageGroup": "adults"
+  },
+
+  {
+    "id": 36,
+    "name": "Fashion Item 36",
+    "price": 80,
+    "image": "https://images.unsplash.com/photo-1520974735194-6c4cfd8d1c3c?q=80&w=800",
+    "isFeature": false,
+    "gender": "unisex",
+    "ageGroup": "teens"
+  },
+
+  {
+    "id": 37,
+    "name": "Fashion Item 37",
+    "price": 155,
+    "image": "https://images.unsplash.com/photo-1520974735194-6c4cfd8d1c3c?q=80&w=800",
+    "isFeature": true,
+    "gender": "men",
+    "ageGroup": "adults"
+  },
+
+  {
+    "id": 38,
+    "name": "Fashion Item 38",
+    "price": 50,
+    "image": "https://images.unsplash.com/photo-1520974735194-6c4cfd8d1c3c?q=80&w=800",
+    "isFeature": false,
+    "gender": "women",
+    "ageGroup": "kids"
+  },
+
+  {
+    "id": 39,
+    "name": "Fashion Item 39",
+    "price": 200,
+    "image": "https://images.unsplash.com/photo-1520974735194-6c4cfd8d1c3c?q=80&w=800",
+    "isFeature": true,
+    "gender": "unisex",
+    "ageGroup": "adults"
+  },
+
+  {
+    "id": 40,
+    "name": "Fashion Item 40",
+    "price": 95,
+    "image": "https://images.unsplash.com/photo-1520974735194-6c4cfd8d1c3c?q=80&w=800",
+    "isFeature": false,
+    "gender": "men",
+    "ageGroup": "teens"
+  },
+
+  {
+    "id": 41,
+    "name": "Fashion Item 41",
+    "price": 175,
+    "image": "https://images.unsplash.com/photo-1520974735194-6c4cfd8d1c3c?q=80&w=800",
+    "isFeature": true,
+    "gender": "women",
+    "ageGroup": "adults"
+  },
+
+  {
+    "id": 42,
+    "name": "Fashion Item 42",
+    "price": 60,
+    "image": "https://images.unsplash.com/photo-1520974735194-6c4cfd8d1c3c?q=80&w=800",
+    "isFeature": false,
+    "gender": "unisex",
+    "ageGroup": "kids"
+  },
+
+  {
+    "id": 43,
+    "name": "Fashion Item 43",
+    "price": 225,
+    "image": "https://images.unsplash.com/photo-1520974735194-6c4cfd8d1c3c?q=80&w=800",
+    "isFeature": true,
+    "gender": "men",
+    "ageGroup": "adults"
+  },
+
+  {
+    "id": 44,
+    "name": "Fashion Item 44",
+    "price": 85,
+    "image": "https://images.unsplash.com/photo-1520974735194-6c4cfd8d1c3c?q=80&w=800",
+    "isFeature": false,
+    "gender": "women",
+    "ageGroup": "teens"
+  },
+
+  {
+    "id": 45,
+    "name": "Fashion Item 45",
+    "price": 160,
+    "image": "https://images.unsplash.com/photo-1520974735194-6c4cfd8d1c3c?q=80&w=800",
+    "isFeature": true,
+    "gender": "unisex",
+    "ageGroup": "adults"
+  },
+
+  {
+    "id": 46,
+    "name": "Fashion Item 46",
+    "price": 55,
+    "image": "https://images.unsplash.com/photo-1520974735194-6c4cfd8d1c3c?q=80&w=800",
+    "isFeature": false,
+    "gender": "men",
+    "ageGroup": "kids"
+  },
+
+  {
+    "id": 47,
+    "name": "Fashion Item 47",
+    "price": 195,
+    "image": "https://images.unsplash.com/photo-1520974735194-6c4cfd8d1c3c?q=80&w=800",
+    "isFeature": true,
+    "gender": "women",
+    "ageGroup": "adults"
+  },
+
+  {
+    "id": 48,
+    "name": "Fashion Item 48",
+    "price": 70,
+    "image": "https://images.unsplash.com/photo-1520974735194-6c4cfd8d1c3c?q=80&w=800",
+    "isFeature": false,
+    "gender": "unisex",
+    "ageGroup": "teens"
+  },
+
+  {
+    "id": 49,
+    "name": "Fashion Item 49",
+    "price": 230,
+    "image": "https://images.unsplash.com/photo-1520974735194-6c4cfd8d1c3c?q=80&w=800",
+    "isFeature": true,
+    "gender": "men",
+    "ageGroup": "adults"
+  },
+
+  {
+    "id": 50,
+    "name": "Fashion Item 50",
+    "price": 65,
+    "image": "https://images.unsplash.com/photo-1520974735194-6c4cfd8d1c3c?q=80&w=800",
+    "isFeature": false,
+    "gender": "unisex",
+    "ageGroup": "kids"
+  }
+]

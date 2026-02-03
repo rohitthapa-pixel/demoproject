@@ -2,6 +2,13 @@ import { motion } from "framer-motion";
 import logo from "../../src/assets/images/logo.png";
 
 export default function Navbar() {
+  const navItems=[
+     { label: "Women", path: "/women" },
+  { label: "Mens", path: "/mens" },
+  { label: "Unisex", path: "/unisex" },
+  { label: "About", path: "/about" },
+  { label: "Login", path: "/login" }
+  ];
   return (
     <motion.nav
       className="h-20 w-full bg-gray-800 shadow flex items-center justify-between px-6"
@@ -30,14 +37,14 @@ export default function Navbar() {
         animate={{ opacity: 1 }}
         transition={{ delay: 0.4 }}
       >
-        {["women", "mens", "unisex", "About", "login"].map((item, i) => (
+        {navItems.map((item, i) => (
           <motion.a
             key={i}
-            href="#"
+            href={item.path}
             className="cursor-pointer"
             whileHover={{ scale: 1.1, color: "#dc2626" }}
           >
-            {item}
+            {item.label}
           </motion.a>
         ))}
         <motion.span whileHover={{ scale: 1.1, color: "#dc2626" }}>
