@@ -1,13 +1,13 @@
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 
-import swipper1 from "../../src/assets/images/swipper1.jpg";
-import swipper2 from "../../src/assets/images/swipper2.jpg";
-import swipper3 from "../../src/assets/images/swipper3.jpg";
+import swipper1 from "../../assets/images/swipper1.jpg";
+import swipper2 from "../../assets/images/swipper2.jpg";
+import swipper3 from "../../assets/images/swipper3.jpg";
 
 const CarouselComponent = (Carousel as any).default || Carousel;
 
-export default function Home() {
+export default function HomeBannerSection() {
   const responsive = {
     xl: { breakpoint: { max: 3000, min: 1280 }, items: 4 },
     lg: { breakpoint: { max: 1280, min: 1024 }, items: 3 },

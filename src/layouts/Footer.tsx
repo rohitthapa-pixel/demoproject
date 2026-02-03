@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { FaInstagram, FaFacebook, FaTwitter } from "react-icons/fa";
 
 export default function Footer() {
   return (
@@ -10,70 +11,86 @@ export default function Footer() {
       viewport={{ once: true }}
     >
       <motion.nav
-        className="h-40 flex justify-between items-start gap-5 p-6"
+        className="mx-auto grid max-w-7xl grid-cols-1 gap-8 p-6 sm:grid-cols-2 md:grid-cols-4"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
         variants={{
           hidden: {},
           visible: {
-            transition: {
-              staggerChildren: 0.15,
-            },
+            transition: { staggerChildren: 0.15 },
           },
         }}
       >
-        {/* Brand */}
+       
         <motion.div variants={item}>
-          <h2 className="font-bold text-lg">Kotroach</h2>
+          <h2 className="text-xl font-bold">Kotroach</h2>
+          <p className="mt-2 text-sm text-gray-300">
+            Premium fashion for modern lifestyle.
+          </p>
         </motion.div>
 
-        {/* Quick Links */}
+        
         <motion.div variants={item}>
-          <h3 className="font-semibold mb-2">Quick Links</h3>
-          <ul className="text-sm text-gray-200 space-y-1 flex flex-col">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Mens</a></li>
-            <li><a href="#">Womens</a></li>
-            <li><a href="#">Unisex</a></li>
-          </ul>
-        </motion.div>
-
-        {/* Social */}
-        <motion.div variants={item}>
-          <h3 className="font-semibold mb-2">Follow Us</h3>
-          <ul className="text-sm text-gray-300 space-y-1">
-            <li>Facebook</li>
-            <li>Instagram</li>
-            <li>Twitter</li>
+          <h3 className="mb-3 font-semibold">Quick Links</h3>
+          <ul className="space-y-2 text-sm text-gray-300">
+            {["Home", "Mens", "Womens", "Unisex"].map(link => (
+              <li key={link}>
+                <a
+                  href="#"
+                  className="transition hover:text-white hover:underline"
+                >
+                  {link}
+                </a>
+              </li>
+            ))}
           </ul>
         </motion.div>
 
         
         <motion.div variants={item}>
-          <h3 className="font-semibold mb-2 text-gray-200">Sign up for emails</h3>
+          <h3 className="mb-3 font-semibold">Follow Us</h3>
+          <ul className="space-y-2 text-sm text-gray-300">
+            <li className="flex items-center gap-2 hover:text-white transition cursor-pointer">
+              <FaFacebook /> Facebook
+            </li>
+            <li className="flex items-center gap-2 hover:text-white transition cursor-pointer">
+              <FaInstagram /> Instagram
+            </li>
+            <li className="flex items-center gap-2 hover:text-white transition cursor-pointer">
+              <FaTwitter /> Twitter
+            </li>
+          </ul>
+        </motion.div>
+
+        
+        <motion.div variants={item}>
+          <h3 className="mb-3 font-semibold text-gray-200">
+            Sign up for emails
+          </h3>
           <input
             type="email"
             placeholder="Enter your email"
-            className="border px-2 py-1 text-sm rounded text-black"
+            className="w-full rounded-md border border-gray-600 bg-gray-800 px-3 py-2 text-sm text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
           />
         </motion.div>
       </motion.nav>
 
+    
       <motion.div
-        className="text-center pb-4 text-gray-300"
+        className="border-t border-gray-700 py-4 text-center text-gray-400"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ delay: 0.6 }}
         viewport={{ once: true }}
       >
-        <p className="text-sm">© 2026 All rights reserved</p>
+        <p className="text-sm">© 2026 Kotroach. All rights reserved.</p>
       </motion.div>
     </motion.footer>
   );
 }
 
-/* animation variant */
+
 const item = {
   hidden: { opacity: 0, y: 20 },
   visible: { opacity: 1, y: 0 },
