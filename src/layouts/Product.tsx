@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Heart, ShoppingCart, Check } from "lucide-react";
+// import { Heart, ShoppingCart, Check } from "lucide-react";
 
 export default function ProductPage() {
   const products = [
@@ -65,7 +65,7 @@ export default function ProductPage() {
 </h1>
 
 
-      <div className="mx-auto grid max-w-7xl grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+      {/* <div className="mx-auto grid max-w-7xl grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
         {products.map((product, index) => {
           const isFav = favorites.includes(product.id);
           const inCart = cart.includes(product.id);
@@ -80,7 +80,6 @@ export default function ProductPage() {
               className="rounded-2xl bg-white shadow-xl"
             >
               <div className="group relative overflow-hidden rounded-2xl">
-                {/* Image */}
                 <motion.img
                   src={product.image}
                   alt={product.name}
@@ -89,7 +88,6 @@ export default function ProductPage() {
                   transition={{ duration: 0.5 }}
                 />
 
-                {/* Overlay (always visible on mobile) */}
                 <div className="absolute inset-0 flex items-center justify-center gap-5 bg-black/50 
                   opacity-100 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity duration-300">
                   
@@ -135,7 +133,6 @@ export default function ProductPage() {
                 </div>
               </div>
 
-              {/* Content */}
               <div className="p-5 sm:p-6">
                 <h2 className="text-base sm:text-lg font-bold">
                   {product.name}
@@ -152,7 +149,8 @@ export default function ProductPage() {
             </motion.div>
           );
         })}
-      </div>
+      </div> */}
+      
     </div>
   );
 }
