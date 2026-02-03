@@ -4,7 +4,7 @@ import logo from "../../src/assets/images/logo.png";
 export default function Navbar() {
   return (
     <motion.nav
-      className="h-20 w-full bg-white shadow flex items-center justify-between px-6"
+      className="h-20 w-full bg-gray-800 shadow flex items-center justify-between px-6"
       initial={{ y: -80, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
@@ -25,7 +25,7 @@ export default function Navbar() {
 
       {/* Menu */}
       <motion.div
-        className="flex items-center gap-6 text-lg font-medium text-gray-700"
+        className="flex items-center gap-6 text-lg font-medium text-white "
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.4 }}
@@ -56,8 +56,10 @@ export default function Navbar() {
         <input
           type="text"
           placeholder="Search for products..."
-          className="outline-none text-sm w-full"
+          className="outline-none text-sm w-full bg-transparent
+             text-white placeholder:text-white/70"
         />
+
       </motion.div>
 
       {/* Cart */}

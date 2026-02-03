@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 export default function Footer() {
   return (
     <motion.footer
-      className="w-full bg-gradient-to-r from-gray-700 to-blue-950 text-white"
+      className="w-full bg-gradient-to-r from-gray-700 to-gray-950 text-white"
       initial={{ opacity: 0, y: 60 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, ease: "easeOut" }}

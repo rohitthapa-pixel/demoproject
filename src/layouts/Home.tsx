@@ -1,57 +1,47 @@
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Autoplay, EffectFade } from "swiper/modules";
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
 
 import swipper1 from "../../src/assets/images/swipper1.jpg";
 import swipper2 from "../../src/assets/images/swipper2.jpg";
 import swipper3 from "../../src/assets/images/swipper3.jpg";
 
-export default function SimpleSwiper() {
+const CarouselComponent = (Carousel as any).default || Carousel;
+
+export default function Home() {
+  const responsive = {
+    xl: { breakpoint: { max: 3000, min: 1280 }, items: 4 },
+    lg: { breakpoint: { max: 1280, min: 1024 }, items: 3 },
+    md: { breakpoint: { max: 1024, min: 768 }, items: 2 },
+    sm: { breakpoint: { max: 768, min: 640 }, items: 2 },
+    xs: { breakpoint: { max: 640, min: 0 }, items: 1 },
+  };
+
   return (
-    <Swiper
-      modules={[Navigation, Pagination, Autoplay, EffectFade]}
-      effect="fade"
-      speed={1200}
-      slidesPerView={1}
-      navigation
-      pagination={{ clickable:false }}
-      autoplay={{ delay: 4000, disableOnInteraction: false }}
-      loop
-      className="h-90 w-full"
-    >
-      {[swipper1, swipper2, swipper3].map((img, i) => (
-        <SwiperSlide key={i} className="relative">
-          
-          {/* Image */}
-          <img
-            src={img}
-            alt={`slide-${i}`}
-            className="h-full w-full object-contain scale-105 transition-transform duration-[5000ms]"
-          />
+    <div className="w-full min-h-full px-6 py-10 bg-gray-600">
+      <CarouselComponent
+        responsive={responsive}
+        infinite
+        autoPlay
+        autoPlaySpeed={3000}
+        arrows
+        showDots
+        draggable
+        swipeable
+      >
+        {[swipper1, swipper2, swipper3].map((img, index) => (
+          <div
+  key={index}
+  className="mx-3 h-[420px] rounded-2xl overflow-hidden shadow-lg transition-transform hover:scale-105"
+>
+  <img
+    src={img}
+    alt={`slide-${index}`}
+    className="w-full h-full object-cover"
+  />
+</div>
 
-          {/* Dark overlay */}
-          <div className="absolute inset-0 bg-black/40" />
-
-          {/* Glass Card */}
-          <div className="absolute inset-0 flex items-center justify-center">
-            <div className="backdrop-blur-md bg-white/10 border border-white/20 rounded-2xl p-10 text-center text-white shadow-2xl max-w-lg animate-fadeUp">
-              
-              <h1 className="text-5xl font-extrabold tracking-wide">
-                Creative Design
-              </h1>
-
-              <p className="mt-4 text-lg opacity-90">
-                Modern • Clean • Professional UI
-              </p>
-
-              <button className="mt-6 px-8 py-3 rounded-full bg-white text-black font-semibold hover:bg-black hover:text-white transition-all duration-300">
-                Explore More
-              </button>
-
-            </div>
-          </div>
-
-        </SwiperSlide>
-      ))}
-    </Swiper>
+        ))}
+      </CarouselComponent>
+    </div>
   );
 }
