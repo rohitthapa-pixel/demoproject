@@ -1,7 +1,26 @@
 import { motion } from "framer-motion";
 import logo from "../../src/assets/images/logo.png";
 import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
+interface User {
+  id: string;
+  username: string;
+  email: string;
+  isverified: boolean;
+  cart: any[];
+  favorite: any[];
+}
 export default function Navbar() {
+  const [cartCount, setCartCount] = useState<number>(0);
+    
+    useEffect(() => {
+    const storedUser = localStorage.getItem("authUser");
+
+    if (storedUser) {
+      const user: User = JSON.parse(storedUser);
+      setCartCount(user.cart.length);
+    }
+  }, []);
   const MotionLink = motion(Link)
   const navItems=[
   { label: "Womens", path: "/womens" },
@@ -82,7 +101,7 @@ export default function Navbar() {
       >
         <span className="text-sm font-medium">Cart</span>
         <span className="bg-black text-white text-xs px-2 py-1 rounded-full">
-          0
+          {cartCount}
         </span>
       </motion.div>
     </motion.nav>

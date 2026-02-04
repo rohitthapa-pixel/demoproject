@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ShoppingCart, Check, Heart } from "lucide-react";
 
@@ -13,10 +13,37 @@ type ProductComponentProps = {
   product: Product;
   index: number;
 };
+interface User {
+  id: string;
+  username: string;
+  email: string;
+  isverified: boolean;
+  cart: any[];
+  favorite: any[];
+}
 
 export default function ProductCard({ product, index }: ProductComponentProps) {
+
   const [isAddedToCart, setIsAddedToCart] = useState<boolean>(false);
   const [liked, setLiked] = useState<boolean>(false);
+
+  useEffect(() => {
+    const storedUser = localStorage.getItem("authUser");
+
+    if (storedUser) {
+      const user: User = JSON.parse(storedUser);
+      const userId = user.id;
+      const productId = product.id;
+
+      if(isAddedToCart === true) {
+
+      } else {
+
+      }
+      
+    }
+
+  }, [isAddedToCart]);
 
   return (
     <motion.div

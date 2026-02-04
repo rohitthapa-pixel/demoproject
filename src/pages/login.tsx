@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { nav } from "framer-motion/client";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 export default function Login() {
   const[email, setEmail]=useState("")
@@ -26,13 +27,13 @@ export default function Login() {
       );
       const data = await res.json();
       if (data.length == 0){
-        alert('user not found')
+        toast.error('user not found')
         return;
       }
       const user= data[0]
 
       if (user.password !== password){
-        alert('incorrect password')
+        toast.error('incorrect password')
         return;
       }
       
@@ -41,9 +42,11 @@ export default function Login() {
         username:user.username,
         email:user.email,
         isverified:true,
+        cart: user.cart,
+        favorite: user.favorite,
       };
       localStorage.setItem("authUser", JSON.stringify(verifiedUser));
-      alert('login successfull')
+      toast.success('login successfull')
      
       navigate("/");
 
