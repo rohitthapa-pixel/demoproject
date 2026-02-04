@@ -29,8 +29,8 @@ export default function ProductCard({ product, index }: ProductComponentProps) {
       
       <div className="group relative">
         <motion.img
-          src={product.image}
-          alt={product.name}
+          src={product?.image}
+          alt={product?.name}
           className="h-64 w-full object-cover"
           whileHover={{ scale: 1.1 }}
           transition={{ duration: 0.5 }}

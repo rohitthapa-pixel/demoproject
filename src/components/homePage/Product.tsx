@@ -30,7 +30,8 @@ export default function FeaturedProductSection() {
 
 
       <div className="mx-auto grid max-w-7xl grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-        {products.map((product, index) => {
+        {products.map((product, index) =>
+         {
           return (
             <ProductComponent
             product={product}
@@ -42,3 +43,5 @@ export default function FeaturedProductSection() {
     </div>
   );
 }
+
+

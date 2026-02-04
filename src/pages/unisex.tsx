@@ -24,9 +24,9 @@ const cardVariants = {
   }
 };
 
-const Mens = () => {
+const unisex = () => {
   const mensProduct = products.filter(
-    (item) => item.gender === "men"
+    (item) => item.gender === "unisex"
   );
 
   return (
@@ -43,7 +43,7 @@ const Mens = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
       >
-        Men’s Collection
+        unisex Collection
       </motion.h1>
 
       {mensProduct.length === 0 ? (
@@ -98,4 +98,4 @@ const Mens = () => {
   );
 };
 
-export default Mens;
+export default unisex;

@@ -1,9 +1,10 @@
 import { motion } from "framer-motion";
 import logo from "../../src/assets/images/logo.png";
-
+import { Link } from "react-router-dom";
 export default function Navbar() {
+  const MotionLink = motion(Link)
   const navItems=[
-     { label: "Women", path: "/women" },
+  { label: "Womens", path: "/womens" },
   { label: "Mens", path: "/mens" },
   { label: "Unisex", path: "/unisex" },
   { label: "About", path: "/about" },
@@ -17,6 +18,7 @@ export default function Navbar() {
       transition={{ duration: 0.6, ease: "easeOut" }}
     >
       {/* Logo */}
+      <Link to ="/">
       <motion.div
         className="flex items-center gap-2 cursor-pointer"
         initial={{ opacity: 0, x: -40 }}
@@ -29,6 +31,7 @@ export default function Navbar() {
           Ketroch
         </span>
       </motion.div>
+      </Link>
 
       {/* Menu */}
       <motion.div
@@ -38,14 +41,14 @@ export default function Navbar() {
         transition={{ delay: 0.4 }}
       >
         {navItems.map((item, i) => (
-          <motion.a
+          <MotionLink
             key={i}
-            href={item.path}
+            to={item.path}
             className="cursor-pointer"
             whileHover={{ scale: 1.1, color: "#dc2626" }}
           >
             {item.label}
-          </motion.a>
+          </MotionLink>
         ))}
         <motion.span whileHover={{ scale: 1.1, color: "#dc2626" }}>
           How to order
