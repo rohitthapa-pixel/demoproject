@@ -1,13 +1,25 @@
 import { motion } from "framer-motion";
-import { nav } from "framer-motion/client";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
+
 export default function Login() {
   const[email, setEmail]=useState("")
   const[password, setPassword]= useState("")
+  const [isLoggedIn, setIsLoggedIn]= useState(!!localStorage.getItem('userToken'));
    const navigate=useNavigate()
+
+// checking isloggedin or not
+const handleLogin=(token:any)=>{
+  localStorage.setItem('userToken', token);
+  setIsLoggedIn(true);
+};
+const handleLogOut=()=>{
+  localStorage.removeItem('userToken');
+  setIsLoggedIn(false);
+}
+
   const handleSubmit = async (e:any)=>{
     
     e.preventDefault();
@@ -46,15 +58,15 @@ export default function Login() {
         favorite: user.favorite,
       };
       localStorage.setItem("authUser", JSON.stringify(verifiedUser));
-      toast.success('login successfull')
-     
-      navigate("/");
+      toast.success('login successfull');
+      window.location.href = "/";
 
   }
   catch(err){
     alert("user not found")
   }
 }
+
   return (
     <div className="relative min-h-screen flex items-center justify-center bg-gray-950 overflow-hidden">
       <motion.div
@@ -142,17 +154,13 @@ export default function Login() {
           Login
         </motion.button>
         </form>
-
-       
-        
-
-      
         <p className="text-gray-400 text-sm text-center mt-6">
           Don’t have an account?{" "}
           <span className="text-blue-400 hover:underline cursor-pointer">
              <Link to="/register">Register</Link>
           </span>
         </p>
+       
       </motion.div>
     </div>
   );

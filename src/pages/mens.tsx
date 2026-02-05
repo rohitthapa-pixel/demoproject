@@ -86,6 +86,7 @@ const Mens = () => {
                   whileTap={{ scale: 0.95 }}
                   whileHover={{ scale: 1.03 }}
                   className="w-full bg-gradient-to-br from-green-400 to-blue-800  text-white py-2 rounded-full tracking-wide hover:bg-gray-800  transition"
+                  
                 >
                   Add to Cart
                 </motion.button>

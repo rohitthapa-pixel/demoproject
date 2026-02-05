@@ -64,16 +64,7 @@ export default function Footer() {
         </motion.div>
 
         
-        <motion.div variants={item}>
-          <h3 className="mb-3 font-semibold text-gray-200">
-            Sign up for emails
-          </h3>
-          <input
-            type="email"
-            placeholder="Enter your email"
-            className="w-full rounded-md border border-gray-600 bg-gray-800 px-3 py-2 text-sm text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
-          />
-        </motion.div>
+       
       </motion.nav>
 
     

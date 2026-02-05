@@ -1,7 +1,9 @@
 import { motion } from "framer-motion";
-import logo from "../../src/assets/images/logo.png";
 import { Link } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
+import logo from "../../src/assets/images/logo.png";
+import { toast } from "react-toastify";
+
 interface User {
   id: string;
   username: string;
@@ -10,98 +12,85 @@ interface User {
   cart: any[];
   favorite: any[];
 }
-export default function Navbar() {
-  const [cartCount, setCartCount] = useState<number>(0);
-    
-    useEffect(() => {
-    const storedUser = localStorage.getItem("authUser");
 
-    if (storedUser) {
+export default function Navbar() {
+  const [cartLength, setCartLength] = useState(0);
+  const [isUserLoggedIn, setIsUserLoggedIn] = useState<boolean>(false);
+
+  useEffect(() => {
+    const updateCartLength = () => {
+      const storedUser = localStorage.getItem("authUser");
+      console.log(storedUser);
+      if (!storedUser) {
+        setCartLength(0);
+        return;
+      }
+
+      setIsUserLoggedIn(true);
       const user: User = JSON.parse(storedUser);
-      setCartCount(user.cart.length);
-    }
+      setCartLength(user?.cart?.length);
+    };
+
+    updateCartLength();
+    window.addEventListener("cartUpdated", updateCartLength);
+
+    return () => {
+      window.removeEventListener("cartUpdated", updateCartLength);
+    };
   }, []);
-  const MotionLink = motion(Link)
-  const navItems=[
-  { label: "Womens", path: "/womens" },
-  { label: "Mens", path: "/mens" },
-  { label: "Unisex", path: "/unisex" },
-  { label: "About", path: "/about" },
-  { label: "Login", path: "/login" }
+
+  const MotionLink = motion(Link);
+
+  const navItems = [
+    { label: "Womens", path: "/womens" },
+    { label: "Mens", path: "/mens" },
+    { label: "Unisex", path: "/unisex" },
+    { label: "About", path: "/about" },
+    { label: isUserLoggedIn ? "Logout" : "Login", path: isUserLoggedIn ? "/" : "/login" },
   ];
+
   return (
     <motion.nav
-      className="h-20 w-full bg-gray-800 shadow flex items-center justify-between px-6"
+      className="h-20 w-full bg-gray-800 shadow flex items-center justify-between px-6 text-white"
       initial={{ y: -80, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.6, ease: "easeOut" }}
+      transition={{ duration: 0.6 }}
     >
-      {/* Logo */}
-      <Link to ="/">
-      <motion.div
-        className="flex items-center gap-2 cursor-pointer"
-        initial={{ opacity: 0, x: -40 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ delay: 0.2 }}
-        whileHover={{ scale: 1.05 }}
-      >
-        <img src={logo} alt="Logo" className="h-20 w-20" />
-        <span className="text-2xl font-extrabold bg-gradient-to-r from-orange-500 to-pink-500 bg-clip-text text-transparent">
-          Ketroch
-        </span>
-      </motion.div>
+      <Link to="/">
+        <motion.div className="flex items-center gap-2 cursor-pointer">
+          <img src={logo} alt="Logo" className="h-20 w-20" />
+          <span className="text-2xl font-extrabold bg-gradient-to-r from-orange-500 to-pink-500 bg-clip-text text-transparent">
+            Ketroch
+          </span>
+        </motion.div>
       </Link>
 
-      {/* Menu */}
-      <motion.div
-        className="flex items-center gap-6 text-lg font-medium text-white "
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.4 }}
-      >
+      <div className="flex items-center gap-6 text-lg font-medium">
         {navItems.map((item, i) => (
           <MotionLink
             key={i}
             to={item.path}
-            className="cursor-pointer"
             whileHover={{ scale: 1.1, color: "#dc2626" }}
+            onClick={() => {
+              if(item.label === 'Logout') {
+                localStorage.clear();
+                toast.success('logout successfull');
+                window.location.href = "/";
+              }
+            }}
           >
             {item.label}
           </MotionLink>
         ))}
-        <motion.span whileHover={{ scale: 1.1, color: "#dc2626" }}>
-          How to order
-        </motion.span>
-      </motion.div>
+      </div>
 
-      {/* Search */}
-      <motion.div
-        className="flex items-center gap-2 border rounded-md px-3 py-1 w-80"
-        initial={{ opacity: 0, x: 40 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ delay: 0.6 }}
-        whileHover={{ scale: 1.05 }}
-      >
-        <input
-          type="text"
-          placeholder="Search for products..."
-          className="outline-none text-sm w-full bg-transparent
-             text-white placeholder:text-white/70"
-        />
-
-      </motion.div>
-
-      {/* Cart */}
       <motion.div
         className="flex items-center gap-2"
-        initial={{ opacity: 0, scale: 0.8 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ delay: 0.8 }}
         whileHover={{ scale: 1.1 }}
       >
-        <span className="text-sm font-medium">Cart</span>
+        <span>Cart</span>
         <span className="bg-black text-white text-xs px-2 py-1 rounded-full">
-          {cartCount}
+          {cartLength}
         </span>
       </motion.div>
     </motion.nav>
